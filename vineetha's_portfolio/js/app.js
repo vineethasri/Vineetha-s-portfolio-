@@ -332,11 +332,12 @@ $(function () {
   // --------------------------------------------- //
   // Contact Form Start
   // --------------------------------------------- //
-  $("#contact-form").submit(function () { //Change
+  $("#contact-form").submit(function (e) { //Change
+    e.preventDefault();
     var th = $(this);
     $.ajax({
       type: "POST",
-      url: "mail.php", //Change
+      url: "https://formsubmit.co/ajax/vineethasri542@gmail.com", //Change
       data: th.serialize()
     }).done(function () {
       $('.contact').find('.form').addClass('is-hidden');
